@@ -1,0 +1,4 @@
+name: AquaticLib
+version: '${project.version}'
+main: cz.larkyy.aquaticlib.AquaticLib
+api-version: 1.16
