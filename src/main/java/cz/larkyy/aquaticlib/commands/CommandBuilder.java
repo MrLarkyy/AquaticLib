@@ -21,6 +21,7 @@ public class CommandBuilder {
     }
 
     public AquaticCommand build() {
+
         return new AquaticCommand(cmd, onCommand, permission);
     }
 

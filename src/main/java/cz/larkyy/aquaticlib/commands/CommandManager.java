@@ -1,9 +1,27 @@
 package cz.larkyy.aquaticlib.commands;
 
-public interface CommandManager {
+import org.bukkit.Bukkit;
+import org.bukkit.command.CommandMap;
 
-    AquaticCommand createCommand(String cmd);
+import java.lang.reflect.Field;
 
-    AquaticCommand addEvent(CommandEvent event);
+public class CommandManager {
+
+    public static void registerCommand(AquaticCommand command) {
+        try {
+            Field field = Bukkit.getServer().getClass().getDeclaredField("commandMap");
+            field.setAccessible(true);
+            CommandMap commandMap = (CommandMap) field.get(Bukkit.getServer());
+
+            command.setAliases(command.getAliases());
+            command.setPermission(command.getPermission());
+
+            commandMap.register(command.getCmd(), command);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
 }
