@@ -12,7 +12,9 @@
     <name>AquaticLib</name>
 
     <properties>
-        <maven.compiler.release>16</maven.compiler.release>
+        <java.version>16</java.version>
+        <maven.compiler.source>16</maven.compiler.source>
+        <maven.compiler.target>16</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
