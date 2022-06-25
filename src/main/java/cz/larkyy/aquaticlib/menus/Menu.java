@@ -55,6 +55,11 @@ public class Menu {
             return this;
         }
 
+        public Builder add(MenuItem menuItem, Consumer<Player> callback) {
+            this.menu.items.put(menuItem, callback);
+            return this;
+        }
+
         public Menu build(JavaPlugin plugin) {
             menu.holder = new Holder(this.menu);
             {
